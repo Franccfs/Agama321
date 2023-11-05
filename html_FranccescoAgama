@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatGPT sobre Arquitecturas de Linux</title>
+</head>
+<body>
+    <h1>ChatGPT sobre Arquitecturas de Linux</h1>
+    <div id="chat-container">
+        <div id="chat"></div>
+        <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
+        <button onclick="sendMessage()">Enviar</button>
+    </div>
+    <script>
+        // Lógica para interactuar con ChatGPT (debes proporcionar tu propia API de ChatGPT).
+        // Reemplaza la URL con la URL real de tu API de ChatGPT.
+        const chatContainer = document.getElementById("chat-container");
+        const chat = document.getElementById("chat");
+        const userInput = document.getElementById("user-input");
+
+        function appendMessage(message, sender) {
+            const messageDiv = document.createElement("div");
+            messageDiv.className = sender === "user" ? "user-message" : "chatgpt-message";
+            messageDiv.textContent = message;
+            chat.appendChild(messageDiv);
+        }
+
+        function sendMessage() {
+            const userMessage = userInput.value;
+            appendMessage(userMessage, "user");
+            userInput.value = "";
+
+            // Llamar a la API de ChatGPT y agregar la respuesta al chat.
+            // Reemplaza esta parte con tu propia lógica de llamada a la API.
+            // Ejemplo ficticio:
+            const chatgptResponse = "Respuesta de ChatGPT sobre arquitecturas de Linux.";
+            appendMessage(chatgptResponse, "chatgpt");
+        }
+    </script>
+</body>
+</html>
+
